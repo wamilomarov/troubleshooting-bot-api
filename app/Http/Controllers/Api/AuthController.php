@@ -23,7 +23,7 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $user = User::query()->where('username', $request->get('username'))->first();
+        $user = User::query()->where('username', Str::lower($request->get('username')))->first();
 
         if (is_null($user) || !Hash::check($request->get('password'), $user->getAttribute('password'))) {
             throw ValidationException::withMessages([

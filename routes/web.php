@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
+
+
+    return \Illuminate\Support\Facades\DB::table('technical_answers')->paginate();
     return view('welcome');
 });
+
+Route::get('rearrange', 'Api\TechnicalAnswerController@rearrange');
