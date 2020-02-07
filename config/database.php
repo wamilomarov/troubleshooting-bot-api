@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+//var_dump(env('MONGODB_DSN')); exit;
+
 return [
 
     /*
@@ -96,6 +98,7 @@ return [
             'dsn' => env('MONGODB_DSN'),
             'database' => env('MONGODB_DATABASE'),
         ],
+
 
     ],
 
