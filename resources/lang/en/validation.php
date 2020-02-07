@@ -118,6 +118,7 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
     'incorrect_old_password' => 'Please provide correct old password.',
+    'no_such_csr' => 'No CSR with such ID could be found.',
 
     /*
     |--------------------------------------------------------------------------
