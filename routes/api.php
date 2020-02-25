@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth:api'], function (){
     Route::post('update', 'Api\ProfileController@update');
     Route::get('search', 'Api\TechnicalAnswerController@search');
     Route::get('check', 'Api\TechnicalAnswerController@check');
+    Route::get('csr/{technical_answer}', 'Api\TechnicalAnswerController@get');
 });
 
 Route::post('register', 'Api\AuthController@register');

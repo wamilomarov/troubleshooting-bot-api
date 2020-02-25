@@ -9,7 +9,6 @@ use App\Models\ContactPerson;
 use App\Models\TechnicalAnswer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Jenssegers\Mongodb\Eloquent\Builder;
 
 class TechnicalAnswerController extends Controller
 {
@@ -102,6 +101,10 @@ class TechnicalAnswerController extends Controller
             'links' => $links,
             'meta' => $meta], 200);
 
-        return TechnicalAnswerResource::collection($technicalAnswers)->withQuery($request->query());
+    }
+
+    public function get(TechnicalAnswer $technical_answer)
+    {
+        return TechnicalAnswerResource::make($technical_answer);
     }
 }

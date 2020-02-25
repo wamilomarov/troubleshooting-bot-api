@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\TechnicalAnswer;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,10 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+
+        Route::bind("technical_answer", function ($value){
+            return TechnicalAnswer::query()->find($value) ?? abort(404);
+        });
     }
 
     /**
